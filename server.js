@@ -38,6 +38,9 @@ wss.on('connection', (ws) => {
     console.log('Kullanici geldi')
 })
 
+app.get('/', (req,res) => {
+    res.redirect('/chat')
+})
 
 app.get('/chat', userMiddleware.userControl,userController.chat_page)
 
