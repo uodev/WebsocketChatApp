@@ -1,4 +1,5 @@
-const socket = new WebSocket("ws://localhost:3000/chat")
+const protocol = window.location.protocol.includes("https") ? "wss" : "ws"
+const socket = new WebSocket(`${protocol}://${location.host}`)
 const messageInput = document.getElementById('messageInput')
 const chatArea = document.getElementById('chatArea')
 const fullName = document.getElementById('fullName')
